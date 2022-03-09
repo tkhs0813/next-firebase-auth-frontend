@@ -36,3 +36,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# firebase
+next-firebase-auth-examp-e5e16-firebase-adminsdk-g2u4f-622d64e2e0.json
