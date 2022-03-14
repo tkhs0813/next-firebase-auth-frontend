@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "next-firebase-auth-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
