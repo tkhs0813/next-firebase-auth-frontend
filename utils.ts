@@ -48,7 +48,15 @@ export const login = async (email: string, password: string) => {
   const id = await result.user.getIdToken();
 
   // Cookieにセッションを付与するようにAPIを投げる
-  await fetch("/api/session", { method: "POST", body: JSON.stringify({ id }) });
+  await fetch("http://localhost:1234/api/session", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }),
+    credentials: "include",
+  });
 };
 
 /**
@@ -56,5 +64,8 @@ export const login = async (email: string, password: string) => {
  */
 export const logout = async () => {
   // セッションCookieを削除するため、Firebase SDKでなくREST APIでログアウトさせる
-  await fetch("/api/sessionLogout", { method: "POST" });
+  await fetch("http://localhost:1234/api/sessionLogout", {
+    method: "POST",
+    credentials: "include",
+  });
 };
